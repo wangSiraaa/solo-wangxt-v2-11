@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>织图 · 离线针法图编辑器</title>
+    <style>
+      /* 打印时只输出打印区 */
+      #print-root { display: none; }
+      @media print {
+        #root { display: none !important; }
+        #print-root { display: block !important; }
+        .print-page { page-break-after: always; }
+        .print-page:last-child { page-break-after: auto; }
+      }
+      @page { size: A4 portrait; margin: 8mm; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
